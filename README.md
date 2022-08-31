@@ -1,2 +1,1 @@
-# Python3_Spider_Web
-spider study code
+<h1>Python3 网络爬虫练习</h1>
