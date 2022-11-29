@@ -1,0 +1,22 @@
+import requests
+import re
+import os
+from multiprocessing import Process
+from multiprocessing import Pool
+
+def hanime_down(i):
+	folder_name = 'test\\'
+	url = f'https://i.nhentai.net/galleries/1548117/{str(i)}.jpg'
+	print(url)
+	page = requests.get(url)
+	file = open(folder_name+str(i)+'_1.jpg','bw')
+	file.write(page.content)
+	file.close()
+	time.sleep(1)
+
+if __name__ == '__main__':
+	multi_process  = Pool(5)
+	for i in range(155,156):
+		multi_process.apply_async(func=hanime_down,args=(i,))
+	multi_process.close()
+	multi_process.join()
